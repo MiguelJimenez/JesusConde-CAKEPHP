@@ -1,11 +1,20 @@
 <?php 
 class PostsController extends AppController
 {
+
+	public $name = 'Posts'; // Variable $name usada para sobreescribir nombres de clase PHP4
+
 	public $helpers = array('Html', 'Form');
 
 	public function index()
 	{
 		$this->set('posts', $this->Post->find('all'));
+
+		/*Método set se utiliza para indicar a la vista qué es lo que se tiene que mostrar
+		Tiene 2 parámetros:
+		1º. Nombre de la vista donde se va a mostrar el resultado
+		2º. El resultado de llamar al método findAll('')
+		*/
 	}
 
 		public function view($id = null)
